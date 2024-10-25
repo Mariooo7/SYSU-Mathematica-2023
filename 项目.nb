@@ -1,0 +1,920 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     41543,        912]
+NotebookOptionsPosition[     38966,        856]
+NotebookOutlinePosition[     39609,        880]
+CellTagsIndexPosition[     39566,        877]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ "Mathematica\:671f\:672b\:9879\:76ee\:4f5c\:4e1a\n      \t\t",
+ StyleBox["\[LongDash]\[LongDash]\:53ef\:4ea4\:4e92\:62a5\:7ae5\:6a21\:578b\
+\:4e0e\:9700\:6c42\:7684\:65f6\:95f4\:5e8f\:5217\:9884\:6d4b\:ff08\:63a2\:7d22\
+\:ff09",
+  FontSize->24]
+}], "Title",
+ CellChangeTimes->{{3.910332513951754*^9, 3.910332522608137*^9}, {
+  3.9103434263091965`*^9, 3.9103435346076827`*^9}, {3.9103435789642286`*^9, 
+  3.91034361049924*^9}},
+ TextAlignment->Center,
+ TextJustification->
+  0.75,ExpressionUUID->"8055720b-f786-46eb-a286-715081dd66be"],
+
+Cell[CellGroupData[{
+
+Cell["1.1 \:5f15\:8a00", "Section",
+ CellChangeTimes->{{3.91034375914526*^9, 
+  3.910343766335865*^9}},ExpressionUUID->"179a3a14-a98c-432a-9eb6-\
+6e1bd57234f7"],
+
+Cell["\<\
+\t\:7b2c\:4e00\:6b21\:542c\:5230\:62a5\:7ae5\:95ee\:9898\:662f\:5728\:5927\
+\:4e00\:7684\:7ba1\:7406\:5b66\:539f\:7406\:7684\:8bfe\:4e0a\:ff0c\:8001\:5e08\
+\:5411\:6211\:4eec\:7b80\:7565\:5730\:8bb2\:89e3\:4e86\:8fd9\:4e00\:5e93\:5b58\
+\:51b3\:7b56\:7ecf\:5178\:95ee\:9898\:7684\:5185\:6db5\:ff0c\:5373\:5728\:8003\
+\:8651\:590d\:6742\:7684\:5404\:79cd\:6210\:672c\:3001\:65f6\:95f4\:53d8\:91cf\
+\:7684\:60c5\:51b5\:4e0b\:83b7\:53d6\:6700\:5927\:671f\:671b\:6536\:76ca\:ff08\
+\:964d\:4f4e\:603b\:6210\:672c\:ff09\:ff0c\:8fd9\:4e00\:95ee\:9898\:53ef\:4ee5\
+\:88ab\:5904\:7406\:5f97\:975e\:5e38\:7b80\:5355\:ff0c\:4e5f\:53ef\:4ee5\:505a\
+\:5230\:975e\:5e38\:590d\:6742\:ff0c\:5b8c\:5168\:53d6\:51b3\:4e8e\:5728\:7cfb\
+\:7edf\:4e2d\:8003\:8651\:591a\:5c11\:6709\:5f71\:54cd\:7684\:53c2\:91cf\:ff0c\
+\:6211\:56e0\:6b64\:5bf9\:8fd9\:4e00\:95ee\:9898\:4ea7\:751f\:6d53\:539a\:7684\
+\:5174\:8da3\:3002
+\
+\>", "Text",
+ CellChangeTimes->{{3.910343783064311*^9, 3.9103439475296946`*^9}, {
+   3.9103439980145273`*^9, 3.9103440214851775`*^9}, {3.9103440548854895`*^9, 
+   3.9103441965514956`*^9}, 3.910344232320264*^9, {3.9103442729837627`*^9, 
+   3.9103443842502775`*^9}, 
+   3.910344424325503*^9},ExpressionUUID->"a4212d5f-703d-429a-b201-\
+20d39c5b74b7"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["1.2 \:95ee\:9898\:5f15\:5165", "Section",
+ CellChangeTimes->{{3.9103444128948193`*^9, 
+  3.9103444195909576`*^9}},ExpressionUUID->"ebe19f05-0b32-4b43-a74a-\
+a2a20bf1128d"],
+
+Cell["\<\
+\:5177\:4f53\:8bf4\:6765\:ff0c\:62a5\:7ae5\:95ee\:9898\:662f\:4e00\:4e2a\:7ecf\
+\:5178\:7684\:4f18\:5316\:95ee\:9898\:ff0c\:4e3b\:8981\:7814\:7a76\:5728\:6709\
+\:9650\:7684\:8d44\:6e90\:548c\:65f6\:95f4\:4e0b\:ff0c\:5982\:4f55\:505a\:51fa\
+\:6700\:4f18\:7684\:51b3\:7b56\:4ee5\:5b9e\:73b0\:6700\:5927\:5316\:7684\:6536\
+\:76ca\:3002\:62a5\:7ae5\:95ee\:9898\:53ef\:4ee5\:5e94\:7528\:4e8e\:8bb8\:591a\
+\:9886\:57df\:ff0c\:5982\:5e93\:5b58\:7ba1\:7406\:3001\:751f\:4ea7\:8ba1\:5212\
+\:7b49\:3002\:5176\:6570\:5b66\:539f\:7406\:4e3b\:8981\:5305\:62ec\:4ee5\:4e0b\
+\:51e0\:4e2a\:65b9\:9762\:ff1a
+
+1.\:51b3\:7b56\:53d8\:91cf\:ff1a\:62a5\:7ae5\:95ee\:9898\:4e2d\:ff0c\:51b3\
+\:7b56\:53d8\:91cf\:662f\:6bcf\:5929\:4e70\:8fdb\:7684\:62a5\:7eb8\:6570\:91cf\
+\:3002\:5047\:8bbe\:6bcf\:5929\:4e70\:8fdb\:7684\:62a5\:7eb8\:6570\:91cf\:4e3a\
+x\:ff0c\:90a3\:4e48\:51b3\:7b56\:53d8\:91cf\:5c31\:662fx\:3002
+2.\:6536\:76ca\:51fd\:6570\:ff1a\:62a5\:7ae5\:95ee\:9898\:7684\:76ee\:6807\
+\:662f\:6700\:5927\:5316\:603b\:6536\:76ca\:3002\:6536\:76ca\:51fd\:6570\:901a\
+\:5e38\:8868\:793a\:4e3a\:6536\:5165\:4e0e\:6210\:672c\:7684\:5dee\:503c\:3002\
+\:5047\:8bbe\:6bcf\:4efd\:62a5\:7eb8\:7684\:552e\:4ef7\:4e3ap\:ff0c\:8fdb\
+\:4ef7\:4e3ac\:ff0c\:6b8b\:503c\:4e3as\:ff0c\:90a3\:4e48\:6536\:76ca\:51fd\
+\:6570\:53ef\:4ee5\:8868\:793a\:4e3a\:ff1a\:6536\:76ca = p * \:9500\:552e\
+\:91cf - c * \:8fdb\:8d27\:91cf\:3002
+3.\:9500\:552e\:6982\:7387\:ff1a\:62a5\:7ae5\:95ee\:9898\:4e2d\:ff0c\:9500\
+\:552e\:91cf\:662f\:4e00\:4e2a\:968f\:673a\:53d8\:91cf\:ff0c\:5176\:5206\:5e03\
+\:6982\:7387\:5df2\:77e5\:3002\:5047\:8bbe\:9500\:552e\:91cf\:4e3aS\:ff0c\
+\:90a3\:4e48\:62a5\:7ae5\:9700\:8981\:6839\:636e\:9500\:552e\:6982\:7387\:6765\
+\:9884\:6d4b\:6bcf\:5929\:7684\:9500\:552e\:91cf\:3002
+4.\:5e93\:5b58\:6210\:672c\:ff1a\:62a5\:7ae5\:95ee\:9898\:4e2d\:ff0c\:5e93\
+\:5b58\:6210\:672c\:662f\:4e00\:4e2a\:91cd\:8981\:7684\:8003\:8651\:56e0\:7d20\
+\:3002\:5e93\:5b58\:6210\:672c\:901a\:5e38\:5305\:62ec\:8fdb\:8d27\:6210\:672c\
+\:3001\:5b58\:50a8\:6210\:672c\:548c\:964d\:4ef7\:6210\:672c\:3002\:8fdb\:8d27\
+\:6210\:672c\:4e0e\:8fdb\:8d27\:91cf\:6210\:6b63\:6bd4\:ff0c\:5b58\:50a8\:6210\
+\:672c\:4e0e\:5e93\:5b58\:91cf\:6210\:6b63\:6bd4\:ff0c\:964d\:4ef7\:6210\:672c\
+\:4e0e\:5e93\:5b58\:91cf\:6210\:6b63\:6bd4\:3002\:5047\:8bbe\:8fdb\:8d27\:6210\
+\:672c\:4e3ac1\:ff0c\:5b58\:50a8\:6210\:672c\:4e3ah\:ff0c\:964d\:4ef7\:6210\
+\:672c\:4e3ad\:ff0c\:90a3\:4e48\:5e93\:5b58\:6210\:672c\:53ef\:4ee5\:8868\
+\:793a\:4e3a\:ff1a\:5e93\:5b58\:6210\:672c = c1 * \:8fdb\:8d27\:91cf + h * \
+\:5e93\:5b58\:91cf + d * \:5e93\:5b58\:91cf\:3002
+5.\:6570\:5b66\:6a21\:578b\:ff1a\:62a5\:7ae5\:95ee\:9898\:7684\:6570\:5b66\
+\:6a21\:578b\:53ef\:4ee5\:5206\:4e3a\:79bb\:6563\:6a21\:578b\:548c\:8fde\:7eed\
+\:6a21\:578b\:3002\:79bb\:6563\:6a21\:578b\:4e3b\:8981\:7528\:4e8e\:6574\:6570\
+\:51b3\:7b56\:53d8\:91cf\:7684\:60c5\:51b5\:ff0c\:8fde\:7eed\:6a21\:578b\:4e3b\
+\:8981\:7528\:4e8e\:8fde\:7eed\:51b3\:7b56\:53d8\:91cf\:7684\:60c5\:51b5\:3002\
+\:62a5\:7ae5\:95ee\:9898\:53ef\:4ee5\:4f7f\:7528\:52a8\:6001\:89c4\:5212\:3001\
+\:6574\:6570\:89c4\:5212\:3001\:968f\:673a\:6a21\:62df\:7b49\:65b9\:6cd5\:6c42\
+\:89e3\:3002
+6.\:6c42\:89e3\:65b9\:6cd5\:ff1a\:62a5\:7ae5\:95ee\:9898\:6709\:591a\:79cd\
+\:6c42\:89e3\:65b9\:6cd5\:ff0c\:5982\:52a8\:6001\:89c4\:5212\:3001\:6574\:6570\
+\:89c4\:5212\:3001\:9057\:4f20\:7b97\:6cd5\:3001\:6a21\:62df\:9000\:706b\:7b97\
+\:6cd5\:7b49\:3002\:6c42\:89e3\:65b9\:6cd5\:7684\:9009\:62e9\:53d6\:51b3\:4e8e\
+\:95ee\:9898\:7684\:5177\:4f53\:60c5\:51b5\:548c\:9700\:6c42\:3002
+
+\:901a\:8fc7\:5efa\:7acb\:6570\:5b66\:6a21\:578b\:ff0c\:62a5\:7ae5\:95ee\:9898\
+\:53ef\:4ee5\:8f6c\:5316\:4e3a\:4e00\:4e2a\:4f18\:5316\:95ee\:9898\:ff0c\:7136\
+\:540e\:4f7f\:7528\:5404\:79cd\:6c42\:89e3\:65b9\:6cd5\:6765\:6c42\:89e3\:ff0c\
+\:4ee5\:5b9e\:73b0\:6700\:5927\:5316\:7684\:6536\:76ca\:ff0c\:8fd9\:4e5f\:662f\
+\:8be5\:9879\:76ee\:7684\:51fa\:53d1\:70b9\:3002
+
+\
+\>", "Text",
+ CellChangeTimes->{{3.910343783064311*^9, 3.9103439475296946`*^9}, {
+   3.9103439980145273`*^9, 3.9103440214851775`*^9}, {3.9103440548854895`*^9, 
+   3.9103441965514956`*^9}, 3.910344232320264*^9, {3.9103442729837627`*^9, 
+   3.9103443677366343`*^9}, {3.910344427061043*^9, 
+   3.9103444297733817`*^9}},ExpressionUUID->"5ed0d6f0-2b07-4820-bbba-\
+c2414d806855"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["2.1 \:53ef\:4ea4\:4e92\:62a5\:7ae5\:6a21\:578b", "Section",
+ CellChangeTimes->{{3.910344442419433*^9, 
+  3.9103444544684415`*^9}},ExpressionUUID->"959cec20-a587-4ef5-adce-\
+d6e95642f852"],
+
+Cell["\<\
+\t\:8fd9\:4e00\:90e8\:5206\:ff0c\:5728\:53ea\:8003\:8651\:5355\:4f4d\:5546\
+\:54c1\:6210\:672c\:3001\:7f3a\:8d27\:6210\:672c\:548c\:8d85\:989d\:5e93\:5b58\
+\:6210\:672c\:7684\:60c5\:51b5\:4e0b\:ff0c\:7b80\:5316\:62a5\:7ae5\:6a21\:578b\
+\:ff0c\:5e76\:4e14\:5c06\:5176\:89c6\:4e3a\:8fde\:7eed\:6a21\:578b\:ff0c\:4ee5\
+\:9002\:5e94\:66f4\:666e\:904d\:7684\:5b8f\:89c2\:51b3\:7b56\:60c5\:5883\:ff0c\
+\:5229\:7528Mathematica\:5185\:7f6e\:65b9\:6cd5\:514d\:53bb\:590d\:6742\:7684\
+\:6c42\:5bfc\:ff0c\:76f4\:63a5\:83b7\:53d6\:603b\:6210\:672c\:6700\:4f4e\:65f6\
+\:7684\:6700\:4f18\:5e93\:5b58\:ff0c\:5e76\:4e14\:5229\:7528\:4ea4\:4e92\:5f0f\
+\:64cd\:4f5c\:529f\:80fd\:ff0c\:5c06\:6a21\:578b\:8f6c\:5316\:4e3a\:53ef\:4ee5\
+\:81ea\:7531\:8c03\:6574\:53c2\:6570\:7684\:65b9\:4fbf\:5feb\:6377\:7684\:51b3\
+\:7b56\:5de5\:5177\:ff0c\:901a\:8fc7\:53ef\:89c6\:5316\:64cd\:4f5c\:5448\:73b0\
+\:3002
+
+\:5177\:4f53\:64cd\:4f5c\:5982\:4e0b\:ff1a\
+\>", "Text",
+ CellChangeTimes->{{3.9103444715208464`*^9, 
+  3.9103447343380876`*^9}},ExpressionUUID->"c2c13898-69e1-4c91-9e06-\
+849fb5efb482"],
+
+Cell["", "Text",ExpressionUUID->"b53463a6-41c4-4a12-8fb6-ce662f0779fa"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"1.", " ", "\:5b9a\:4e49\:9700\:6c42\:5206\:5e03"}], "\:ff1a", 
+    "\:6b63\:6001\:5206\:5e03\:6a21\:62df\:9700\:6c42"}], "*)"}], 
+  RowBox[{
+   RowBox[{
+    RowBox[{"demandDistribution", "=", 
+     RowBox[{"NormalDistribution", "[", 
+      RowBox[{"100", ",", "20"}], "]"}]}], ";"}], "\n", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "2.", " ", "\:751f\:6210100\:671f\:5386\:53f2\:9700\:6c42\:6570\:636e"}], 
+    "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"demandHistory", "=", 
+     RowBox[{"RandomVariate", "[", 
+      RowBox[{"demandDistribution", ",", "100"}], "]"}]}], ";"}], "\n", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"3.", " ", "\:6210\:672c\:53c2\:6570\:8bbe\:7f6e"}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"unitSellingPrice", "=", "120"}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"unitCostPrice", "=", "80"}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"shortageCost", "=", "150"}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"excessCost", "=", "10"}], ";"}], "\n", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"4.", " ", "\:603b\:6210\:672c\:51fd\:6570"}], "\:ff1a", 
+     "\:5e93\:5b58x\:548c\:9700\:6c42demand\:4e4b\:95f4\:7684\:603b\:6210\
+\:672c"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"totalCost", "[", 
+      RowBox[{"x_", ",", "demand_"}], "]"}], ":=", 
+     RowBox[{
+      RowBox[{"unitCostPrice", "*", "x"}], "+", 
+      RowBox[{"Max", "[", 
+       RowBox[{"0", ",", 
+        RowBox[{"excessCost", "*", 
+         RowBox[{"(", 
+          RowBox[{"x", "-", "demand"}], ")"}]}]}], "]"}], "+", 
+      RowBox[{"Max", "[", 
+       RowBox[{"0", ",", 
+        RowBox[{"shortageCost", "*", 
+         RowBox[{"(", 
+          RowBox[{"demand", "-", "x"}], ")"}]}]}], "]"}]}]}], ";"}], "\n", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "5.", " ", 
+     "\:521b\:5efa\:65f6\:95f4\:5e8f\:5217\:6a21\:578b\:5e76\:9884\:6d4b\:672a\
+\:6765\:9700\:6c42"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"demandTimeSeries", "=", 
+     RowBox[{"TimeSeries", "[", "demandHistory", "]"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"arimaModel", "=", 
+     RowBox[{"TimeSeriesModelFit", "[", 
+      RowBox[{"demandTimeSeries", ",", "\"\<ARIMA\>\""}], "]"}]}], ";"}], 
+   "\n", 
+   RowBox[{
+    RowBox[{"forecast", "=", 
+     RowBox[{"TimeSeriesForecast", "[", 
+      RowBox[{"arimaModel", ",", 
+       RowBox[{"{", 
+        RowBox[{"101", ",", "110"}], "}"}]}], "]"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"predictedDemand", "=", 
+     RowBox[{"forecast", "[", "\"\<Values\>\"", "]"}]}], ";"}], "\n", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"6.", " ", "\:53ef\:4ea4\:4e92\:56fe\:8868"}], "\:ff1a", 
+     "\:6839\:636e\:6ed1\:5757\:5b9e\:65f6\:66f4\:65b0"}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"Manipulate", "[", 
+    RowBox[{
+     RowBox[{"Module", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+        "currentDemand", ",", "optimalInventoryLevel", ",", "optimalPoint"}], 
+        "}"}], ",", 
+       RowBox[{
+       "(*", "\:5f53\:524d\:671f\:7684\:9700\:6c42\:9884\:6d4b\:503c", "*)"}], 
+       RowBox[{
+        RowBox[{"currentDemand", "=", 
+         RowBox[{"predictedDemand", "[", 
+          RowBox[{"[", 
+           RowBox[{"t", "-", "100"}], "]"}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{
+         "\:4f18\:5316\:5e93\:5b58\:6c34\:5e73", "\:ff1a", 
+          "\:4f7f\:603b\:6210\:672c\:6700\:5c0f", "\:ff0c", 
+          "\:7ea6\:675f\:975e\:8d1f"}], "*)"}], 
+        RowBox[{"optimalInventoryLevel", "=", 
+         RowBox[{"x", "/.", " ", 
+          RowBox[{
+           RowBox[{"NMinimize", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"totalCost", "[", 
+                RowBox[{"x", ",", "currentDemand"}], "]"}], ",", 
+               RowBox[{"x", ">=", "0"}]}], "}"}], ",", "x"}], "]"}], "[", 
+           RowBox[{"[", "2", "]"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{
+        "(*", "\:786e\:5b9a\:6700\:4f18\:5e93\:5b58\:6c34\:5e73\:4e0e\:5bf9\
+\:5e94\:603b\:6210\:672c\:7684\:5750\:6807", "*)"}], 
+        RowBox[{"optimalPoint", "=", 
+         RowBox[{"{", 
+          RowBox[{"optimalInventoryLevel", ",", 
+           RowBox[{"totalCost", "[", 
+            RowBox[{"optimalInventoryLevel", ",", "currentDemand"}], "]"}]}], 
+          "}"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"(*", "\:7ed8\:5236\:6210\:672c\:66f2\:7ebf", "*)"}], 
+        RowBox[{"Plot", "[", 
+         RowBox[{
+          RowBox[{"totalCost", "[", 
+           RowBox[{"x", ",", "currentDemand"}], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"x", ",", "0", ",", "200"}], "}"}], ",", 
+          RowBox[{"PlotRange", "->", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", "30000"}], "}"}]}], ",", 
+          RowBox[{"Epilog", "->", 
+           RowBox[{"{", 
+            RowBox[{"Red", ",", 
+             RowBox[{"PointSize", "[", "0.02", "]"}], ",", 
+             RowBox[{"Point", "[", "optimalPoint", "]"}], ",", 
+             RowBox[{"Text", "[", 
+              RowBox[{
+               RowBox[{"Style", "[", 
+                RowBox[{"optimalPoint", ",", "Red"}], "]"}], ",", 
+               RowBox[{"optimalPoint", "+", 
+                RowBox[{"{", 
+                 RowBox[{"5", ",", "500"}], "}"}]}]}], "]"}]}], "}"}]}], ",", 
+          RowBox[{"AxesLabel", "->", 
+           RowBox[{"{", 
+            RowBox[{"\"\<Inventory Level\>\"", ",", "\"\<Total Cost\>\""}], 
+            "}"}]}], ",", 
+          RowBox[{
+          "PlotLabel", "->", "\"\<Total Cost vs. Inventory Level\>\""}], ",", 
+          RowBox[{"ImageSize", "->", "Large"}], ",", 
+          RowBox[{"PlotStyle", "->", 
+           RowBox[{"Thickness", "[", "0.001", "]"}]}]}], "]"}]}]}], "]"}], 
+     ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+        "unitSellingPrice", ",", "120", ",", "\"\<Unit Selling Price\>\""}], 
+        "}"}], ",", "100", ",", "150", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"unitCostPrice", ",", "80", ",", "\"\<Unit Cost Price\>\""}], 
+        "}"}], ",", "60", ",", "100", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"shortageCost", ",", "150", ",", "\"\<Shortage Cost\>\""}], 
+        "}"}], ",", "100", ",", "200", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"excessCost", ",", "10", ",", "\"\<Excess Cost\>\""}], "}"}], 
+       ",", "5", ",", "20", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"t", ",", "101", ",", "\"\<Time\>\""}], "}"}], ",", "101", 
+       ",", "110", ",", "1"}], "}"}]}], "]"}], "\n"}]}]], "Input",
+ CellChangeTimes->{{3.9103323597130127`*^9, 3.9103324589140763`*^9}, {
+   3.9103339877700524`*^9, 3.9103340326220512`*^9}, {3.910334066337264*^9, 
+   3.9103341024673853`*^9}, 3.938838989024531*^9, {3.9388391954134636`*^9, 
+   3.938839207317795*^9}, {3.9388407474212217`*^9, 3.9388407498100567`*^9}},
+ CellLabel->
+  "In[149]:=",ExpressionUUID->"e61a76b3-e0c0-43ce-8353-7b24aba16faa"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`excessCost$$ = 
+    10, $CellContext`shortageCost$$ = 150, $CellContext`t$$ = 
+    106, $CellContext`unitCostPrice$$ = 80, $CellContext`unitSellingPrice$$ = 
+    120, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"\:65e0\:6807\:9898\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`unitSellingPrice$$], 120, "Unit Selling Price"}, 100,
+       150, 1}, {{
+       Hold[$CellContext`unitCostPrice$$], 80, "Unit Cost Price"}, 60, 100, 
+      1}, {{
+       Hold[$CellContext`shortageCost$$], 150, "Shortage Cost"}, 100, 200, 
+      1}, {{
+       Hold[$CellContext`excessCost$$], 10, "Excess Cost"}, 5, 20, 1}, {{
+       Hold[$CellContext`t$$], 101, "Time"}, 101, 110, 1}}, Typeset`size$$ = {
+    504., {148., 151.17370288012177`}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`excessCost$$ = 
+        10, $CellContext`shortageCost$$ = 150, $CellContext`t$$ = 
+        101, $CellContext`unitCostPrice$$ = 
+        80, $CellContext`unitSellingPrice$$ = 120}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Module[{$CellContext`currentDemand$, \
+$CellContext`optimalInventoryLevel$, $CellContext`optimalPoint$}, \
+$CellContext`currentDemand$ = 
+         Part[$CellContext`predictedDemand, $CellContext`t$$ - 
+           100]; $CellContext`optimalInventoryLevel$ = 
+         ReplaceAll[$CellContext`x, 
+           Part[
+            NMinimize[{
+              $CellContext`totalCost[$CellContext`x, \
+$CellContext`currentDemand$], $CellContext`x >= 0}, $CellContext`x], 
+            
+            2]]; $CellContext`optimalPoint$ = \
+{$CellContext`optimalInventoryLevel$, 
+           $CellContext`totalCost[$CellContext`optimalInventoryLevel$, \
+$CellContext`currentDemand$]}; Plot[
+          $CellContext`totalCost[$CellContext`x, \
+$CellContext`currentDemand$], {$CellContext`x, 0, 200}, 
+          PlotRange -> {0, 30000}, Epilog -> {Red, 
+            PointSize[0.02], 
+            Point[$CellContext`optimalPoint$], 
+            Text[
+             
+             Style[$CellContext`optimalPoint$, 
+              Red], $CellContext`optimalPoint$ + {5, 500}]}, 
+          AxesLabel -> {"Inventory Level", "Total Cost"}, PlotLabel -> 
+          "Total Cost vs. Inventory Level", ImageSize -> Large, PlotStyle -> 
+          Thickness[0.001]]], 
+      "Specifications" :> {{{$CellContext`unitSellingPrice$$, 120, 
+          "Unit Selling Price"}, 100, 150, 
+         1}, {{$CellContext`unitCostPrice$$, 80, "Unit Cost Price"}, 60, 100, 
+         1}, {{$CellContext`shortageCost$$, 150, "Shortage Cost"}, 100, 200, 
+         1}, {{$CellContext`excessCost$$, 10, "Excess Cost"}, 5, 20, 
+         1}, {{$CellContext`t$$, 101, "Time"}, 101, 110, 1}}, "Options" :> {},
+       "DefaultOptions" :> {}],
+     ImageSizeCache->{550., {227.99227900017286`, 233.00772099982714`}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.9103323609861856`*^9, 3.9103324602005787`*^9}, 
+   3.9103325411311846`*^9, {3.9103340218341284`*^9, 3.9103340336660957`*^9}, {
+   3.910334078386204*^9, 3.9103341231654177`*^9}, 3.910334788728345*^9, 
+   3.9103433525789127`*^9, {3.9388390831801634`*^9, 3.938839087439496*^9}, 
+   3.9388392113179235`*^9, {3.938839243468339*^9, 3.9388392539121237`*^9}, 
+   3.9388402704112864`*^9, 3.93884078979995*^9},
+ CellLabel->
+  "Out[160]=",ExpressionUUID->"37d3e54a-e331-4140-af92-1a1816618fd9"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "2.2 \:52a0\:5165",
+ StyleBox["\:9700\:6c42\:7684\:65f6\:95f4\:5e8f\:5217\:9884\:6d4b",
+  FontSize->24]
+}], "Section",
+ CellChangeTimes->{{3.9103447484117136`*^9, 3.9103447828116508`*^9}, 
+   3.9388398816615667`*^9},ExpressionUUID->"8abf2c8a-60b0-47f1-bf0f-\
+cf429bf0cbfb"],
+
+Cell["\<\
+\t\:8feb\:4e8e\:672c\:4eba\:80fd\:529b\:6709\:9650\:ff0c\:867d\:7136\:60f3\
+\:5230\:4e86TimeSeriesModelFit\:65b9\:6cd5\:ff0c\:53ef\:4ee5\:81ea\:52a8\:8fdb\
+\:884c\:65f6\:95f4\:5e8f\:5217\:6a21\:578b\:9884\:6d4b\:ff0c\:4e0d\:8fc7\:5b9e\
+\:9645\:64cd\:4f5c\:8fc7\:7a0b\:4e2d\:906d\:9047X\:4e0et\:53d8\:91cf\:66ff\
+\:6362\:7684\:9519\:8bef\:ff0c\:5373\:4f7f\:80fd\:751f\:6210\:56fe\:8868\:ff0c\
+\:4e5f\:662f\:65e0\:610f\:4e49\:65e0\:6cd5\:4ea4\:4e92\:7684\:6b7b\:56fe\:ff0c\
+\:540e\:6765\:6211\:53c8\:8003\:8651\:4e86\:5bf9\:4e24\:4e2a\:4e8c\:5143\:65b9\
+\:7a0b\:ff08\:603b\:6210\:672c\:ff09\:6c42\:5bfc\:3001\:6307\:5b9a\:65f6\:95f4\
+\:5e8f\:5217\:6a21\:578b\:7b49\:65b9\:6cd5\:ff0cddl\:4e4b\:524d\:672a\:5b8c\
+\:6210\:8be5\:90e8\:5206
+\
+\>", "Text",
+ CellChangeTimes->{{3.910344788936597*^9, 3.9103450765853176`*^9}, {
+  3.938839885421961*^9, 
+  3.938839923497489*^9}},ExpressionUUID->"50ccd437-c7cb-4825-b755-\
+b777626583e2"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"1.", " ", "\:5b9a\:4e49\:9700\:6c42\:5206\:5e03"}], "\:ff1a", 
+    "\:6b63\:6001\:5206\:5e03\:6a21\:62df\:9700\:6c42"}], "*)"}], 
+  RowBox[{
+   RowBox[{
+    RowBox[{"demandDistribution", "=", 
+     RowBox[{"NormalDistribution", "[", 
+      RowBox[{"100", ",", "20"}], "]"}]}], ";"}], "\n", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "2.", " ", "\:751f\:6210100\:671f\:5386\:53f2\:9700\:6c42\:6570\:636e"}], 
+    "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"demandHistory", "=", 
+     RowBox[{"RandomVariate", "[", 
+      RowBox[{"demandDistribution", ",", "100"}], "]"}]}], ";"}], "\n", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"3.", " ", "\:6210\:672c\:53c2\:6570\:8bbe\:7f6e"}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"unitSellingPrice", "=", "120"}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"unitCostPrice", "=", "80"}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"shortageCost", "=", "150"}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"excessCost", "=", "10"}], ";"}], "\n", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"4.", " ", "\:603b\:6210\:672c\:51fd\:6570"}], "\:ff1a", 
+     "\:5e93\:5b58x\:548c\:9700\:6c42demand\:4e4b\:95f4\:7684\:603b\:6210\
+\:672c"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"totalCost", "[", 
+      RowBox[{"x_", ",", "demand_"}], "]"}], ":=", 
+     RowBox[{
+      RowBox[{"unitCostPrice", "*", "x"}], "+", 
+      RowBox[{"Max", "[", 
+       RowBox[{"0", ",", 
+        RowBox[{"excessCost", "*", 
+         RowBox[{"(", 
+          RowBox[{"x", "-", "demand"}], ")"}]}]}], "]"}], "+", 
+      RowBox[{"Max", "[", 
+       RowBox[{"0", ",", 
+        RowBox[{"shortageCost", "*", 
+         RowBox[{"(", 
+          RowBox[{"demand", "-", "x"}], ")"}]}]}], "]"}]}]}], ";"}], "\n", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "5.", " ", 
+     "\:521b\:5efa\:65f6\:95f4\:5e8f\:5217\:6a21\:578b\:5e76\:9884\:6d4b\:672a\
+\:6765\:9700\:6c42"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"demandTimeSeries", "=", 
+     RowBox[{"TimeSeries", "[", "demandHistory", "]"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"arimaModel", "=", 
+     RowBox[{"TimeSeriesModelFit", "[", 
+      RowBox[{"demandTimeSeries", ",", "\"\<ARIMA\>\""}], "]"}]}], ";"}], 
+   "\n", 
+   RowBox[{
+    RowBox[{"forecast", "=", 
+     RowBox[{"TimeSeriesForecast", "[", 
+      RowBox[{"arimaModel", ",", 
+       RowBox[{"{", 
+        RowBox[{"101", ",", "110"}], "}"}]}], "]"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"predictedDemand", "=", 
+     RowBox[{"forecast", "[", "\"\<Values\>\"", "]"}]}], ";"}], "\n", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"6.", " ", "\:53ef\:4ea4\:4e92\:56fe\:8868"}], "\:ff1a", 
+     "\:6839\:636e\:6ed1\:5757\:5b9e\:65f6\:66f4\:65b0"}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"Manipulate", "[", 
+    RowBox[{
+     RowBox[{"DynamicModule", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+        "currentDemand", ",", "optimalInventoryLevel", ",", "optimalPoint"}], 
+        "}"}], ",", 
+       RowBox[{
+       "(*", "\:5f53\:524d\:671f\:7684\:9700\:6c42\:9884\:6d4b\:503c", "*)"}], 
+       RowBox[{
+        RowBox[{"currentDemand", "=", 
+         RowBox[{"Dynamic", "[", 
+          RowBox[{"predictedDemand", "[", 
+           RowBox[{"[", 
+            RowBox[{"t", "-", "100"}], "]"}], "]"}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{
+         "\:4f18\:5316\:5e93\:5b58\:6c34\:5e73", "\:ff1a", 
+          "\:4f7f\:603b\:6210\:672c\:6700\:5c0f", "\:ff0c", 
+          "\:7ea6\:675f\:975e\:8d1f"}], "*)"}], 
+        RowBox[{"optimalInventoryLevel", "=", 
+         RowBox[{"x", "/.", " ", 
+          RowBox[{
+           RowBox[{"NMinimize", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"totalCost", "[", 
+                RowBox[{"x", ",", "currentDemand"}], "]"}], ",", 
+               RowBox[{"x", ">=", "0"}]}], "}"}], ",", "x"}], "]"}], "[", 
+           RowBox[{"[", "2", "]"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{
+        "(*", "\:786e\:5b9a\:6700\:4f18\:5e93\:5b58\:6c34\:5e73\:4e0e\:5bf9\
+\:5e94\:603b\:6210\:672c\:7684\:5750\:6807", "*)"}], 
+        RowBox[{"optimalPoint", "=", 
+         RowBox[{"{", 
+          RowBox[{"optimalInventoryLevel", ",", 
+           RowBox[{"totalCost", "[", 
+            RowBox[{"optimalInventoryLevel", ",", "currentDemand"}], "]"}]}], 
+          "}"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"(*", "\:7ed8\:5236\:6210\:672c\:66f2\:7ebf", "*)"}], 
+        RowBox[{"Dynamic", "[", 
+         RowBox[{"Plot", "[", 
+          RowBox[{
+           RowBox[{"totalCost", "[", 
+            RowBox[{"x", ",", "currentDemand"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"x", ",", "0", ",", "200"}], "}"}], ",", 
+           RowBox[{"PlotRange", "->", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", "30000"}], "}"}]}], ",", 
+           RowBox[{"Epilog", "->", 
+            RowBox[{"{", 
+             RowBox[{"Red", ",", 
+              RowBox[{"PointSize", "[", "0.02", "]"}], ",", 
+              RowBox[{"Point", "[", "optimalPoint", "]"}], ",", 
+              RowBox[{"Text", "[", 
+               RowBox[{
+                RowBox[{"Style", "[", 
+                 RowBox[{"optimalPoint", ",", "Red"}], "]"}], ",", 
+                RowBox[{"optimalPoint", "+", 
+                 RowBox[{"{", 
+                  RowBox[{"5", ",", "500"}], "}"}]}]}], "]"}]}], "}"}]}], ",", 
+           RowBox[{"AxesLabel", "->", 
+            RowBox[{"{", 
+             RowBox[{"\"\<Inventory Level\>\"", ",", "\"\<Total Cost\>\""}], 
+             "}"}]}], ",", 
+           RowBox[{
+           "PlotLabel", "->", "\"\<Total Cost vs. Inventory Level\>\""}], ",", 
+           RowBox[{"ImageSize", "->", "Large"}], ",", 
+           RowBox[{"PlotStyle", "->", 
+            RowBox[{"Thickness", "[", "0.001", "]"}]}]}], "]"}], "]"}]}]}], 
+      "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+        "unitSellingPrice", ",", "120", ",", "\"\<Unit Selling Price\>\""}], 
+        "}"}], ",", "100", ",", "150", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"unitCostPrice", ",", "80", ",", "\"\<Unit Cost Price\>\""}], 
+        "}"}], ",", "60", ",", "100", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"shortageCost", ",", "150", ",", "\"\<Shortage Cost\>\""}], 
+        "}"}], ",", "100", ",", "200", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"excessCost", ",", "10", ",", "\"\<Excess Cost\>\""}], "}"}], 
+       ",", "5", ",", "20", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"t", ",", "101", ",", "\"\<Time\>\""}], "}"}], ",", "101", 
+       ",", "110", ",", "1"}], "}"}]}], "]"}], "\n", "\n"}]}]], "Input",
+ CellChangeTimes->{
+  3.910332437393318*^9, {3.9103347970226955`*^9, 3.910334806306856*^9}, 
+   3.938838998490786*^9, {3.938839380818931*^9, 3.938839449333929*^9}, {
+   3.9388396995912185`*^9, 3.938839701316736*^9}, {3.938839743018607*^9, 
+   3.938839750588564*^9}, 3.9388398194733458`*^9, 3.9388402661780744`*^9, 
+   3.9388403345590925`*^9, {3.9388404120985365`*^9, 3.9388404926790423`*^9}, 
+   3.938840600175167*^9, 3.9388406825177836`*^9},
+ CellLabel->
+  "In[125]:=",ExpressionUUID->"d872f94b-97f8-4572-a9c8-6b977ab77ef9"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`excessCost$$ = 
+    10, $CellContext`shortageCost$$ = 150, $CellContext`t$$ = 
+    101, $CellContext`unitCostPrice$$ = 77, $CellContext`unitSellingPrice$$ = 
+    120, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$, 
+    Typeset`name$$ = "\"\:65e0\:6807\:9898\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`unitSellingPrice$$], 120, "Unit Selling Price"}, 100,
+       150, 1}, {{
+       Hold[$CellContext`unitCostPrice$$], 80, "Unit Cost Price"}, 60, 100, 
+      1}, {{
+       Hold[$CellContext`shortageCost$$], 150, "Shortage Cost"}, 100, 200, 
+      1}, {{
+       Hold[$CellContext`excessCost$$], 10, "Excess Cost"}, 5, 20, 1}, {{
+       Hold[$CellContext`t$$], 101, "Time"}, 101, 110, 1}}, Typeset`size$$ = {
+    504., {154., 157.14938722766072`}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`excessCost$$ = 
+        10, $CellContext`shortageCost$$ = 150, $CellContext`t$$ = 
+        101, $CellContext`unitCostPrice$$ = 
+        80, $CellContext`unitSellingPrice$$ = 120}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      DynamicModule[{$CellContext`currentDemand, \
+$CellContext`optimalInventoryLevel, $CellContext`optimalPoint}, \
+$CellContext`currentDemand = Dynamic[
+           
+           Part[$CellContext`predictedDemand, $CellContext`t$$ - 
+            100]]; $CellContext`optimalInventoryLevel = 
+         ReplaceAll[$CellContext`x, 
+           Part[
+            NMinimize[{
+              $CellContext`totalCost[$CellContext`x, \
+$CellContext`currentDemand], $CellContext`x >= 0}, $CellContext`x], 
+            
+            2]]; $CellContext`optimalPoint = \
+{$CellContext`optimalInventoryLevel, 
+           $CellContext`totalCost[$CellContext`optimalInventoryLevel, \
+$CellContext`currentDemand]}; Dynamic[
+          Plot[
+           $CellContext`totalCost[$CellContext`x, \
+$CellContext`currentDemand], {$CellContext`x, 0, 200}, 
+           PlotRange -> {0, 30000}, Epilog -> {Red, 
+             PointSize[0.02], 
+             Point[$CellContext`optimalPoint], 
+             Text[
+              
+              Style[$CellContext`optimalPoint, 
+               Red], $CellContext`optimalPoint + {5, 500}]}, 
+           AxesLabel -> {"Inventory Level", "Total Cost"}, PlotLabel -> 
+           "Total Cost vs. Inventory Level", ImageSize -> Large, PlotStyle -> 
+           Thickness[0.001]]]], 
+      "Specifications" :> {{{$CellContext`unitSellingPrice$$, 120, 
+          "Unit Selling Price"}, 100, 150, 
+         1}, {{$CellContext`unitCostPrice$$, 80, "Unit Cost Price"}, 60, 100, 
+         1}, {{$CellContext`shortageCost$$, 150, "Shortage Cost"}, 100, 200, 
+         1}, {{$CellContext`excessCost$$, 10, "Excess Cost"}, 5, 20, 
+         1}, {{$CellContext`t$$, 101, "Time"}, 101, 110, 1}}, "Options" :> {},
+       "DefaultOptions" :> {}],
+     ImageSizeCache->{550., {233.99227900017286`, 239.00772099982714`}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.9103348103173404`*^9, 3.9103348256969185`*^9}, {
+   3.9388392332560163`*^9, 3.9388392604294105`*^9}, 3.9388394047879477`*^9, {
+   3.938839445044464*^9, 3.9388394525445027`*^9}, 3.9388397532573643`*^9, 
+   3.9388402785067663`*^9, 3.9388403370635767`*^9, {3.9388404145211945`*^9, 
+   3.9388404179786854`*^9}, {3.9388404499752297`*^9, 3.9388404980626917`*^9}, 
+   3.938840603357202*^9, 3.9388406853011236`*^9},
+ CellLabel->
+  "Out[136]=",ExpressionUUID->"abe4c2d4-9180-421e-bafc-d52e5adb4a02"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "NMinimize", "nnum", 
+   "\"\:51fd\:6570\:503c \\!\\(\\*RowBox[{RowBox[{\\\"7.317087406033722`\\\", \
+\\\"\[VeryThinSpace]\\\"}], \\\"+\\\", RowBox[{\\\"Max\\\", \\\"[\\\", \
+RowBox[{\\\"0\\\", \\\",\\\", RowBox[{\\\"10\\\", \\\" \\\", \
+RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"0.09146359257542153`\\\", \\\"\
+\[VeryThinSpace]\\\"}], \\\"-\\\", \
+DynamicBox[ToBoxes[Part[List[Skeleton[10]], Plus[Skeleton[2]]], \
+StandardForm]]}], \\\")\\\"}]}]}], \\\"]\\\"}], \\\"+\\\", \
+RowBox[{\\\"Max\\\", \\\"[\\\", RowBox[{\\\"0\\\", \\\",\\\", RowBox[{\\\"150\
+\\\", \\\" \\\", RowBox[{\\\"(\\\", RowBox[{RowBox[{\\\"-\\\", \
+\\\"0.09146359257542153`\\\"}], \\\"+\\\", \
+DynamicBox[ToBoxes[Part[List[103.02154575184046`, 103.02154575184046`, \
+103.02154575184046`, 103.02154575184046`, 103.02154575184046`, \
+103.02154575184046`, 103.02154575184046`, 103.02154575184046`, \
+103.02154575184046`, 103.02154575184046`], Plus[101, -100]], \
+StandardForm]]}], \\\")\\\"}]}]}], \\\"]\\\"}]}]\\) \:4e0d\:662f\:4e00\:4e2a\
+\:4f4d\:4e8e \\!\\(\\*RowBox[{\\\"{\\\", \\\"x\\\", \\\"}\\\"}]\\) = \
+\\!\\(\\*RowBox[{\\\"{\\\", \\\"0.09146359257542153`\\\", \\\"}\\\"}]\\) \
+\:7684\:6570.\"", 2, 161, 362, 24078542161419758048, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.938840795420967*^9},
+ CellLabel->"",ExpressionUUID->"f51571f2-68b1-4bc8-8014-280d93a4a0e4"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ReplaceAll", "reps", 
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", \\\"x\\\", \\\"}\\\"}]\\) \
+\:65e2\:4e0d\:662f\:66ff\:6362\:89c4\:5219\:5217\:8868\:ff0c\:4e5f\:4e0d\:662f\
+\:4e00\:4e2a\:6709\:6548\:7684\:5206\:6d3e\:8868\:ff0c\:56e0\:6b64\:65e0\:6cd5\
+\:7528\:6765\:66ff\:6362.\"", 2, 161, 363, 24078542161419758048, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.938840795490201*^9},
+ CellLabel->"",ExpressionUUID->"4bd7974c-71ea-479d-8fd2-3a690d6f6314"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "ReplaceAll", "reps", 
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", \\\"x\\\", \\\"}\\\"}]\\) \
+\:65e2\:4e0d\:662f\:66ff\:6362\:89c4\:5219\:5217\:8868\:ff0c\:4e5f\:4e0d\:662f\
+\:4e00\:4e2a\:6709\:6548\:7684\:5206\:6d3e\:8868\:ff0c\:56e0\:6b64\:65e0\:6cd5\
+\:7528\:6765\:66ff\:6362.\"", 2, 161, 364, 24078542161419758048, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.9388407955220947`*^9},
+ CellLabel->"",ExpressionUUID->"db3a77c9-24d6-40c9-8e52-2a459090f461"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["3.1 \:603b\:7ed3", "Section",
+ CellChangeTimes->{{3.9103451023409586`*^9, 
+  3.9103451113715763`*^9}},ExpressionUUID->"51ec4c2e-6619-4ea4-9fde-\
+8140bc6cd068"],
+
+Cell["\<\
+\t\:901a\:8fc7\:8fd9\:4e2a\:62a5\:7ae5\:6a21\:578b\:9879\:76ee\:5b9e\:8df5\
+\:ff0c\:6211\:6df1\:5165\:4e86\:89e3\:4e86\:5e93\:5b58\:7ba1\:7406\:4e2d\:7684\
+\:5173\:952e\:6982\:5ff5\:548c\:51b3\:7b56\:56e0\:7d20\:3002\:62a5\:7ae5\:6a21\
+\:578b\:4e3a\:6211\:63d0\:4f9b\:4e86\:4e00\:4e2a\:7406\:8bba\:6846\:67b6\:ff0c\
+\:5e2e\:52a9\:6211\:5728\:4e0d\:786e\:5b9a\:9700\:6c42\:7684\:60c5\:51b5\:4e0b\
+\:786e\:5b9a\:6700\:4f18\:7684\:5e93\:5b58\:6c34\:5e73\:3002\:5728\:9700\:6c42\
+\:5206\:5e03\:5efa\:6a21\:65b9\:9762\:ff0c\:6211\:5c1d\:8bd5\:4e86\:65f6\:95f4\
+\:5e8f\:5217\:6a21\:578b\:6765\:9884\:6d4b\:9700\:6c42\:6c34\:5e73\:3002\:8fd9\
+\:4e3a\:6211\:4eec\:63d0\:4f9b\:4e86\:5bf9\:672a\:6765\:9700\:6c42\:7684\:4f30\
+\:8ba1\:ff0c\:4f7f\:6211\:4eec\:80fd\:591f\:66f4\:51c6\:786e\:5730\:5236\:5b9a\
+\:5e93\:5b58\:7b56\:7565\:3002\:901a\:8fc7\:5b9a\:4e49\:5355\:4f4d\:5546\:54c1\
+\:552e\:4ef7\:3001\:6210\:672c\:4ee5\:53ca\:76f8\:5173\:7684\:7f3a\:8d27\:548c\
+\:8d85\:989d\:5e93\:5b58\:6210\:672c\:ff0c\:6211\:5efa\:7acb\:4e86\:4e00\:4e2a\
+\:5168\:9762\:7684\:6210\:672c\:51fd\:6570\:3002\:4f18\:5316\:8fd9\:4e2a\:6210\
+\:672c\:51fd\:6570\:ff0c\:627e\:5230\:4e86\:5728\:7ed9\:5b9a\:53c2\:6570\:4e0b\
+\:6700\:4f18\:7684\:5e93\:5b58\:6c34\:5e73\:ff0c\:4ee5\:6700\:5c0f\:5316\:603b\
+\:6210\:672c\:3002\:901a\:8fc7\:4ea4\:4e92\:5f0f\:56fe\:8868\:80fd\:591f\:76f4\
+\:89c2\:5730\:89c2\:5bdf\:4e0d\:540c\:53c2\:6570\:5bf9\:6700\:4f18\:5e93\:5b58\
+\:6c34\:5e73\:548c\:603b\:6210\:672c\:7684\:5f71\:54cd\:3002\:8fd9\:4f7f\:6211\
+\:4eec\:80fd\:591f\:5728\:5b9e\:9645\:5e94\:7528\:4e2d\:7075\:6d3b\:5730\:8c03\
+\:6574\:53c2\:6570\:4ee5\:9002\:5e94\:4e0d\:540c\:7684\:573a\:666f\:3002\:7136\
+\:800c\:ff0c\:8fd9\:4e2a\:6a21\:578b\:4ecd\:7136\:57fa\:4e8e\:4e00\:4e9b\:7b80\
+\:5316\:5047\:8bbe\:ff0c\:6bd4\:5982\:9700\:6c42\:662f\:6b63\:6001\:5206\:5e03\
+\:7684\:3002\:5728\:672a\:6765\:7684\:6539\:8fdb\:4e2d\:ff0c\:6211\:4eec\:53ef\
+\:4ee5\:8003\:8651\:66f4\:590d\:6742\:7684\:9700\:6c42\:5206\:5e03\:6a21\:578b\
+\:ff0c\:4ee5\:66f4\:597d\:5730\:6355\:6349\:5b9e\:9645\:4e1a\:52a1\:4e2d\:7684\
+\:53d8\:5316\:3002
+\t\:6b64\:5916\:ff0c\:6211\:53ef\:4ee5\:8fdb\:4e00\:6b65\:8003\:8651\:52a8\
+\:6001\:5e93\:5b58\:7ba1\:7406\:7b56\:7565\:ff0c\:8003\:8651\:65f6\:95f4\:53d8\
+\:5316\:548c\:5b63\:8282\:6027\:56e0\:7d20\:3002\:8fd9\:5c06\:4f7f\:6211\:4eec\
+\:7684\:6a21\:578b\:66f4\:4e3a\:7cbe\:7ec6\:548c\:5b9e\:7528\:3002
+\t\:603b\:4f53\:800c\:8a00\:ff0c\:8fd9\:4e2a\:62a5\:7ae5\:6a21\:578b\:9879\
+\:76ee\:4e3a\:6211\:63d0\:4f9b\:4e86\:4e00\:4e2a\:5b9e\:8df5\:7684\:673a\:4f1a\
+\:ff0c\:4f7f\:6211\:80fd\:591f\:5e94\:7528\:7406\:8bba\:77e5\:8bc6\:89e3\:51b3\
+\:5b9e\:9645\:4e1a\:52a1\:95ee\:9898\:3002\:5728\:672a\:6765\:ff0c\:6211\:60f3\
+\:901a\:8fc7\:4e0d\:65ad\:6539\:8fdb\:6a21\:578b\:ff0c\:589e\:5f3a\:6211\:5b66\
+\:4ee5\:81f4\:7528\:7684\:80fd\:529b\:3002\
+\>", "Text",
+ CellChangeTimes->{{3.9103452028544717`*^9, 
+  3.9103452750943403`*^9}},ExpressionUUID->"7064d889-e38b-4a56-a47e-\
+017bb0455136"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1430.25, 734.25},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+DockedCells->{},
+PrintingCopies->1,
+PrintingPageRange->{32000, 32000},
+PrintingOptions->{"Magnification"->1.,
+"PaperOrientation"->"Portrait",
+"PaperSize"->{595.2755905511812, 841.8897637795276}},
+Magnification:>0.7 Inherited,
+FrontEndVersion->"12.3 for Microsoft Windows (64-bit) (2021\:5e747\:670823\
+\:65e5)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"8f463272-1af2-46e3-9c1a-cd8e06deb192"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 551, 12, 138, "Title",ExpressionUUID->"8055720b-f786-46eb-a286-715081dd66be"],
+Cell[CellGroupData[{
+Cell[1156, 38, 160, 3, 59, "Section",ExpressionUUID->"179a3a14-a98c-432a-9eb6-6e1bd57234f7"],
+Cell[1319, 43, 1254, 20, 69, "Text",ExpressionUUID->"a4212d5f-703d-429a-b201-20d39c5b74b7"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2610, 68, 177, 3, 59, "Section",ExpressionUUID->"ebe19f05-0b32-4b43-a74a-a2a20bf1128d"],
+Cell[2790, 73, 4300, 64, 265, "Text",ExpressionUUID->"5ed0d6f0-2b07-4820-bbba-c2414d806855"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7127, 142, 193, 3, 59, "Section",ExpressionUUID->"959cec20-a587-4ef5-adce-d6e95642f852"],
+Cell[7323, 147, 1079, 18, 89, "Text",ExpressionUUID->"c2c13898-69e1-4c91-9e06-849fb5efb482"],
+Cell[8405, 167, 71, 0, 30, "Text",ExpressionUUID->"b53463a6-41c4-4a12-8fb6-ce662f0779fa"],
+Cell[CellGroupData[{
+Cell[8501, 171, 7344, 185, 626, "Input",ExpressionUUID->"e61a76b3-e0c0-43ce-8353-7b24aba16faa"],
+Cell[15848, 358, 4247, 83, 502, "Output",ExpressionUUID->"37d3e54a-e331-4140-af92-1a1816618fd9"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20144, 447, 290, 7, 59, "Section",ExpressionUUID->"8abf2c8a-60b0-47f1-bf0f-cf429bf0cbfb"],
+Cell[20437, 456, 935, 16, 69, "Text",ExpressionUUID->"50ccd437-c7cb-4825-b755-b777626583e2"],
+Cell[CellGroupData[{
+Cell[21397, 476, 7615, 190, 643, "Input",ExpressionUUID->"d872f94b-97f8-4572-a9c8-6b977ab77ef9"],
+Cell[29015, 668, 4298, 85, 489, "Output",ExpressionUUID->"abe4c2d4-9180-421e-bafc-d52e5adb4a02"],
+Cell[33316, 755, 1399, 23, 25, "Message",ExpressionUUID->"f51571f2-68b1-4bc8-8014-280d93a4a0e4"],
+Cell[34718, 780, 504, 9, 25, "Message",ExpressionUUID->"4bd7974c-71ea-479d-8fd2-3a690d6f6314"],
+Cell[35225, 791, 506, 9, 25, "Message",ExpressionUUID->"db3a77c9-24d6-40c9-8e52-2a459090f461"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[35780, 806, 165, 3, 59, "Section",ExpressionUUID->"51ec4c2e-6619-4ea4-9fde-8140bc6cd068"],
+Cell[35948, 811, 2990, 41, 128, "Text",ExpressionUUID->"7064d889-e38b-4a56-a47e-017bb0455136"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
